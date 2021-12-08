@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const firstNoRepeted = word => {
+            word = word.replace(" ", "");
+            let compteur = 0;
+            for( let i = 0 ; i < word.length ; i++){
+                for( let j = i+1 ; j < word.length ; j++){
+                    if(word[i]===[j])
+                        compteur++;
+                }
+                if(compteur === 0){
+                    return word[i]
+                }
+            }
+        }
+        console.log(firstNoRepeted("bonjour"));//b
+        console.log(firstNoRepeted("hello henry"));//o but return h oup
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const unionTab = function(tab1,tab2){
+            const tab = tab1.concat(tab2);
+
+            for( let i = 0 ; i < tab.length ; i++ ){
+                for (let j = i+1; j < tab.length ; j++){
+                    if( tab[i] === tab[j] ){
+                        tab.splice(j--, 1);
+                    }
+                }
+            }
+            console.log(tab)
+        }
+
+        unionTab(["e","a","b","e"],["a","c","e","f","d"])
+    </script>
+</body>
+</html>
