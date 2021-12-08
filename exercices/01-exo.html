@@ -10,19 +10,24 @@
     <script>
         const firstNoRepeted = word => {
             word = word.replace(" ", "");
+            
             let compteur = 0;
             for( let i = 0 ; i < word.length ; i++){
-                for( let j = i+1 ; j < word.length ; j++){
-                    if(word[i]===[j])
+                for( let j = 1 ; j <= word.length ; j++){
+                    if(word[i]===word[j])
+                        // console.log(word[i] + " "+ word[j]);
                         compteur++;
                 }
                 if(compteur === 0){
                     return word[i]
                 }
+                else{
+                    return null
+                }
             }
         }
         console.log(firstNoRepeted("bonjour"));//b
-        console.log(firstNoRepeted("hello henry"));//o but return h oup
+        console.log(firstNoRepeted("coucou"));//null
     </script>
 </body>
 </html>
